@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header {
+    background-image: url(oldenglish_tan.jpg);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.235) 7%, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.235) 93%), url(oldenglish_tan.jpg);
+    background-position: center;
+    width: 98vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+}
+
+header h3 {
+    color: white;
+}
+#header-left, #header-right, #header-middle{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    h1 {
+        margin: 0 20px;
+        background-image: linear-gradient(180deg, rgba(162,136,52,1) 7%, rgba(218,165,32,1) 50%, rgba(162,136,52,1) 94%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+
+    }
+}
+
+.gold {
+    margin: 0 5px;
+    width: 5px;
+    height: 100%;
+    background: rgb(162,136,52);
+    background: linear-gradient(180deg, rgba(162,136,52,1) 7%, rgba(218,165,32,1) 50%, rgba(162,136,52,1) 94%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    
+    align-items: center;
+}
+
+#form-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    label {
+        padding: 10px;
+    }
+
+    input {
+        background-color: lightgray;
+        border: none;
+        border-radius: 5px;
+    }
+    input[type="checkbox"] {
+        accent-color: rgb(85, 77, 107);
+        
+      }
+}
+
+#model-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#library-ctr {
+    width: 99%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 20%);
+}
+
+.cover {
+    margin: 10px;
+    width: 1fr;
+    height: 30vw;
+    
+    background:url(oldenglish_tan.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 1px 0px #999,
+                2px 2px 0px #999,
+                3px 3px 0px #999,
+                4px 4px 0px #999,
+                5px 5px 0px #999,
+                6px 6px 0px #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.719);
+
+    h3, h4, h5 {
+        color: rgba(218,165,32,1);
+        padding: 3px;
+        text-shadow:  1px 1px 0px rgba(255, 255, 255, 0.254);
+        
+    }
+}
+
+
+.button {
+    background-color: blue;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    transition: all 0.3s ease;
+    margin: 5px;
+    
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+#read-button {
+    display: flex;
+    width: 50px;
+    border-radius: 5px;
+    border: solid 1px blue;
+    
+    #left {
+        width: 50%;
+        height: 20px;
+        background-color: blue;
+        border-radius: 5px 0 0 5px ;
+        
+    }
+    #right {
+        width: 50%;
+        height: 20px;
+        border-radius: 0 5px 5px 0;
+        background-color: white;
+    }
+
+
+}
