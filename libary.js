@@ -5,8 +5,8 @@ addBookToLibrary(TheHobbit)
 let libraryCTR = document.getElementById('library-ctr');
 const deleteBTN = document.querySelector('.button');
 const box = document.getElementById('model-box')
-
-
+const bookTitle = document.getElementById('title');
+const errorBox = document.getElementById('error');
 
 document.addEventListener('DOMContentLoaded', function(){
     updateUserLibaray(myLibrary)
@@ -69,13 +69,25 @@ function updateUserLibaray(myLibrary){
 const myForm = document.getElementById('myform')
 // listen for form being submitted
 myForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+    let messages = []
+    if (bookTitle.value === '' || bookTitle.value == null) {
+        console.log('error')
+        messages.push('title is required')
+    }
+    if (messages.length > 0){
+        event.preventDefault();
+        errorBox.innerText = messages.join(', ')
+        box.showModal();
+        return
+
+        
+    }
     const formdata = new FormData(myForm);
     const title= formdata.get('title');
     const author = formdata.get('author');
     const pages = formdata.get('pages');
     const isRead = formdata.get('read');
-    console.log('rrgfr', isRead)
+    //console.log('rrgfr', isRead)
     // create object
     const object = new Book(title, author, pages, isRead)
     addBookToLibrary(object)
@@ -84,10 +96,12 @@ myForm.addEventListener("submit", (event) => {
     myForm.reset();
     box.close()
 
-    updateUserLibaray(myLibrary)
-    
+    updateUserLibaray(myLibrary)    
+    errorBox.innerText = ''
 
 })
+
+
 
 
 function delBook(book) {
@@ -119,14 +133,6 @@ closeBTN.addEventListener('click', () => {
   })
 
  
-const readBTN = document.getElementById('read-button');
-readBTN.addEventListener('click', function(){
-    console.log('hi')
-    const left = document.getElementById('left');
-    const right = document.getElementById('right');
-    
-    const swap = window.getComputedStyle(left).backgroundColor
-    console.log(swap)
-    left.style.backgroundColor = window.getComputedStyle(right).backgroundColor;
-    right.style.backgroundColor = swap;
-})
+
+
+
